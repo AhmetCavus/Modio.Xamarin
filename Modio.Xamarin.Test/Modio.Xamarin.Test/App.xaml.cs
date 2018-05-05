@@ -1,15 +1,19 @@
 ﻿using Prism;
 using Prism.Ioc;
-using Modio.Xamarin.ViewModels;
-using Modio.Xamarin.Views;
+using Modio.Xamarin.Test.ViewModels;
+using Modio.Xamarin.Test.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Prism.Unity;
+using Modio.Core.App;
+using Modio.Core.Board;
+using Modio.Core.Module;
+using Modio.Xamarin.Test.Boards;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
-namespace Modio.Xamarin
+namespace Modio.Xamarin.Test
 {
-    public partial class App : PrismApplication
+    public partial class App : Controller.ModioFormsApplication
     {
         /* 
          * The Xamarin Forms XAML Previewer in Visual Studio uses System.Activator.CreateInstance.
@@ -23,14 +27,12 @@ namespace Modio.Xamarin
         protected override async void OnInitialized()
         {
             InitializeComponent();
-
             await NavigationService.NavigateAsync("NavigationPage/MainPage");
         }
 
-        protected override void RegisterTypes(IContainerRegistry containerRegistry)
+        protected override void OnInitializeBoards(IAppService<UIBoardService, UIModuleService> service)
         {
-            containerRegistry.RegisterForNavigation<NavigationPage>();
-            containerRegistry.RegisterForNavigation<MainPage>();
+            service.AddBoard<TestBoardService>();
         }
     }
 }

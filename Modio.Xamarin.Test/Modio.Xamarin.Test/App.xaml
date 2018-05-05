@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<modio:ModioFormsApplication xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:modio="clr-namespace:Modio.Xamarin.Controller;assembly=Modio.Xamarin"
+             x:Class="Modio.Xamarin.Test.App">
+    <Application.Resources>
+
+        <!-- Application resource dictionary -->
+
+    </Application.Resources>
+</modio:ModioFormsApplication>

@@ -9,9 +9,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Android.Runtime.ResourceDesignerAttribute("Modio.Xamarin.Droid.Resource", IsApplication=true)]
+[assembly: global::Android.Runtime.ResourceDesignerAttribute("Modio.Xamarin.Test.Droid.Resource", IsApplication=true)]
 
-namespace Modio.Xamarin.Droid
+namespace Modio.Xamarin.Test.Droid
 {
 	
 	
@@ -26,7 +26,7 @@ namespace Modio.Xamarin.Droid
 		
 		public static void UpdateIdValues()
 		{
-			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::Modio.Xamarin.Droid.Resource.Attribute.actionBarSize;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::Modio.Xamarin.Test.Droid.Resource.Attribute.actionBarSize;
 		}
 		
 		public partial class Animation
