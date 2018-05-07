@@ -29,44 +29,45 @@ namespace Modio.Xamarin.Controller
 
         Type ResolvePageType(Type uiService)
         {
-            var toFind = uiService.Name.Replace("Service", "");
+            var toFind = uiService.Name.Replace("Service", "Page");
             Type pageType = _assemblyTypes.FirstOrDefault(type => type.Name == toFind && type.IsClass);
             return pageType;
         }
 
-        protected override void OnActivateModule(UIModuleService module)
+        protected override void OnActivateModule<SubModuleService>(UIModuleService module)
         {
         }
 
-        protected override void OnAddBoard(UIBoardService board)
+        protected override void OnAddBoard<TSubBoardService>(UIBoardService board)
         {
             var boardPageType = ResolvePageType(board.GetType());
+            _containerRegistry.RegisterSingleton<TSubBoardService>();
             _containerRegistry.RegisterForNavigation(boardPageType, board.Id);
         }
 
-        protected override void OnAddModule(UIModuleService module)
+        protected override void OnAddModule<TSubModuleService>(UIModuleService module)
         {
             var modulePageType = ResolvePageType(module.GetType());
             _containerRegistry.RegisterForNavigation(modulePageType, module.Id);
         }
 
-        protected override void OnAddWorker(WorkerModuleService worker)
+        protected override void OnAddWorker<TSubWorkerModuleService>(WorkerModuleService worker)
         {
         }
 
-        protected override void OnRemoveBoard(UIBoardService board)
+        protected override void OnRemoveBoard<TSubBoardService>(UIBoardService board)
         {
         }
 
-        protected override void OnRemoveModule(UIModuleService module)
+        protected override void OnRemoveModule<TSubModuleService>(UIModuleService module)
         {
         }
 
-        protected override void OnRemoveWorker(WorkerModuleService worker)
+        protected override void OnRemoveWorker<TSubWorkerService>(WorkerModuleService worker)
         {
         }
 
-        protected override void OnSelectBoard(UIBoardService board)
+        protected override void OnSelectBoard<TSubBoardService>(UIBoardService board)
         {
             _navigationService.NavigateAsync(board.Id);
         }
