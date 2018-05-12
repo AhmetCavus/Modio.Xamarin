@@ -12,7 +12,7 @@
     <RootNamespace>Modio.Xamarin.Test.Droid</RootNamespace>
     <AssemblyName>Modio.Xamarin.Test.Android</AssemblyName>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkVersion>v7.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v8.1</TargetFrameworkVersion>
     <AndroidApplication>True</AndroidApplication>
     <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
@@ -91,10 +91,6 @@
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Modio.Xamarin\Modio.Xamarin\Modio.Xamarin.csproj">
-      <Project>{c0186adf-e5e4-4a9e-97e4-cfdb9f4d31e8}</Project>
-      <Name>Modio.Xamarin</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Modio.Xamarin.Test\Modio.Xamarin.Test.csproj">
       <Project>{A682884C-CB44-4A89-B752-27BB634E0ABE}</Project>
       <Name>Modio.Xamarin.Test</Name>

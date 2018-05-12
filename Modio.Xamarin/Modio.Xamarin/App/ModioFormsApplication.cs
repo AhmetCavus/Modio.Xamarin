@@ -2,8 +2,10 @@
 using Modio.Core.Board;
 using Modio.Core.Container;
 using Modio.Core.Module;
+using Modio.Xamarin.Container;
 using Prism;
 using Prism.Ioc;
+using Xamarin.Forms;
 
 namespace Modio.Xamarin.Controller
 {
@@ -17,6 +19,7 @@ namespace Modio.Xamarin.Controller
         #region Properties
 
         IAppService<UIBoardService, UIModuleService> _appService;
+        public IAppService<UIBoardService, UIModuleService> AppService => _appService;
 
 
         #endregion
@@ -33,20 +36,31 @@ namespace Modio.Xamarin.Controller
 
         #region Protected / Private Methods
 
+        protected override void RegisterTypes(IContainerRegistry containerRegistry)
+        {
+            containerRegistry.RegisterForNavigation<NavigationPage>();
+            _appService = new ModioFormsService(new ModioFormsContainer<UIBoardService>(NavigationService), containerRegistry);
+            OnInitializeBoards(_appService);
+            if (!_appService.IsInitialized) throw new System.Exception();
+        }
+
+        #endregion
+
+        #region Event Methods
+
+        protected override void OnInitialized()
+        {
+            (_appService as ModioFormsService).NavigationService = NavigationService;
+            OnInitializedApp();
+        }
+
         #endregion
 
         #region Abstract Methods
 
         protected abstract void OnInitializeBoards(IAppService<UIBoardService, UIModuleService> service);
 
-        protected abstract override void OnInitialized();
-
-        protected override void RegisterTypes(IContainerRegistry containerRegistry)
-        {
-            _appService = new ModioFormsService(new ServiceDictionaryContainer<UIBoardService>(), containerRegistry, NavigationService);
-            OnInitializeBoards(_appService);
-            if (!_appService.IsInitialized) throw new System.Exception();
-        }
+        protected abstract void OnInitializedApp();
 
         #endregion
 

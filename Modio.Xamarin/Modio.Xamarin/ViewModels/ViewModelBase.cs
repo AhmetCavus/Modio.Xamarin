@@ -1,9 +1,6 @@
-﻿using Prism.Commands;
+﻿using Modio.Core.Service;
 using Prism.Mvvm;
 using Prism.Navigation;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Modio.Xamarin.ViewModels
 {

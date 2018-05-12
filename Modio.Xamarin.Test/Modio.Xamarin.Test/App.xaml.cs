@@ -1,10 +1,5 @@
 ﻿using Prism;
-using Prism.Ioc;
-using Modio.Xamarin.Test.ViewModels;
-using Modio.Xamarin.Test.Views;
-using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using Prism.Unity;
 using Modio.Core.App;
 using Modio.Core.Board;
 using Modio.Core.Module;
@@ -24,10 +19,10 @@ namespace Modio.Xamarin.Test
 
         public App(IPlatformInitializer initializer) : base(initializer) { }
 
-        protected override async void OnInitialized()
+        protected override void OnInitializedApp()
         {
             InitializeComponent();
-            await NavigationService.NavigateAsync("NavigationPage/MainPage");
+            AppService.SelectBoard<TestBoardService>();
         }
 
         protected override void OnInitializeBoards(IAppService<UIBoardService, UIModuleService> service)

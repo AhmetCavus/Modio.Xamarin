@@ -17,7 +17,7 @@ namespace Modio.Xamarin.Test.Droid
             base.OnCreate(bundle);
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
-            LoadApplication(new App(new AndroidInitializer()));
+            LoadApplication(new Modio.Xamarin.Test.App(new AndroidInitializer()));
         }
     }
 

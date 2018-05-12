@@ -20,7 +20,7 @@
     <EnableDotNetNativeCompatibleProfile>true</EnableDotNetNativeCompatibleProfile>
     <PackageCertificateKeyFile>Modio.Xamarin.Test.UWP_TemporaryKey.pfx</PackageCertificateKeyFile>
   </PropertyGroup>
-<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
     <DebugSymbols>true</DebugSymbols>
     <OutputPath>bin\ARM\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
@@ -123,12 +123,20 @@
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
-  <ItemGroup> 
+  <ItemGroup>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform" Version="6.0.6" />
     <PackageReference Include="Xamarin.Forms" Version="2.5.0.122203" />
     <PackageReference Include="Prism.Unity.Forms" Version="7.0.0.396" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Modio.Core\Modio.Core\Modio.Core.csproj">
+      <Project>{09e417a5-7965-4d7b-9f73-1d0b30863667}</Project>
+      <Name>Modio.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Modio.Xamarin\Modio.Xamarin\Modio.Xamarin.csproj">
+      <Project>{c0186adf-e5e4-4a9e-97e4-cfdb9f4d31e8}</Project>
+      <Name>Modio.Xamarin</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Modio.Xamarin.Test\Modio.Xamarin.Test.csproj">
       <Project>{A682884C-CB44-4A89-B752-27BB634E0ABE}</Project>
       <Name>Modio.Xamarin.Test</Name>

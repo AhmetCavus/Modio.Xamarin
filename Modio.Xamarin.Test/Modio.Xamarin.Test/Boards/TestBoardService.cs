@@ -6,5 +6,8 @@ namespace Modio.Xamarin.Test.Boards
 {
     public class TestBoardService : Xamarin.Board.ModioFormsBoardService
     {
+        public TestBoardService()
+        {
+        }
     }
 }

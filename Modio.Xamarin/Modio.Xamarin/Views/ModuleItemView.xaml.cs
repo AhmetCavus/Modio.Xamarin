@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace Modio.Xamarin.Test.Views
+namespace Modio.Xamarin.Views
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class TestBoard : ContentPage
+	public partial class ModuleItemView : ContentView
 	{
-		public TestBoard ()
+		public ModuleItemView ()
 		{
 			InitializeComponent ();
 		}

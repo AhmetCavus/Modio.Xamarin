@@ -1,6 +1,7 @@
 ﻿using Modio.Core.Board;
 using Modio.Core.Container;
 using Modio.Core.Module;
+using Modio.Xamarin.Views;
 using Prism.Ioc;
 using System;
 using System.Linq;
@@ -11,26 +12,26 @@ namespace Modio.Xamarin.Controller
     public class ModioFormsService : Core.App.UIAppService
     {
 
-        Type[] _assemblyTypes;
         IContainerRegistry _containerRegistry;
         Prism.Navigation.INavigationService _navigationService;
+        public Prism.Navigation.INavigationService NavigationService { set => _navigationService = value; }
 
-        public ModioFormsService(IServiceContainer<UIBoardService> container, IContainerRegistry containerRegistry, Prism.Navigation.INavigationService navigationService) : base(container)
+        public ModioFormsService(IServiceContainer<UIBoardService> container, IContainerRegistry containerRegistry) : base(container)
         {
-            Init(containerRegistry, navigationService);
+            Init(containerRegistry);
         }
 
-        void Init(IContainerRegistry containerRegistry, Prism.Navigation.INavigationService navigationService)
+        void Init(IContainerRegistry containerRegistry)
         {
-            _assemblyTypes = Assembly.GetExecutingAssembly().GetTypes();
             _containerRegistry = containerRegistry;
-            _navigationService = navigationService;
         }
 
-        Type ResolvePageType(Type uiService)
+        Type ResolvePageType(Type uiService, Type superPageType)
         {
             var toFind = uiService.Name.Replace("Service", "Page");
-            Type pageType = _assemblyTypes.FirstOrDefault(type => type.Name == toFind && type.IsClass);
+            Assembly assembly = Assembly.GetAssembly(uiService);
+            Type[] types = assembly.GetTypes();
+            Type pageType = types.FirstOrDefault(type => type.Name == toFind && type.IsSubclassOf(superPageType));
             return pageType;
         }
 
@@ -40,14 +41,15 @@ namespace Modio.Xamarin.Controller
 
         protected override void OnAddBoard<TSubBoardService>(UIBoardService board)
         {
-            var boardPageType = ResolvePageType(board.GetType());
+            var boardPageType = ResolvePageType(board.GetType(), typeof(BoardPage));
+            if (boardPageType == null) throw new Exception($"No page found for the service {board.Id}");
             _containerRegistry.RegisterSingleton<TSubBoardService>();
             _containerRegistry.RegisterForNavigation(boardPageType, board.Id);
         }
 
         protected override void OnAddModule<TSubModuleService>(UIModuleService module)
         {
-            var modulePageType = ResolvePageType(module.GetType());
+            var modulePageType = ResolvePageType(module.GetType(), typeof(ModulePage));
             _containerRegistry.RegisterForNavigation(modulePageType, module.Id);
         }
 
