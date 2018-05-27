@@ -1,6 +1,6 @@
-﻿using SmartHotel.Clients.Core.Controls;
-using SmartHotel.Clients.UWP.Extensions;
-using SmartHotel.Clients.UWP.Renderers;
+﻿using Modio.Xamarin.UI.Clients.UWP.Extensions;
+using Modio.Xamarin.UI.Clients.UWP.Renderers;
+using Modio.Xamarin.UI.Controls;
 using System.ComponentModel;
 using System.Linq;
 using Windows.UI.Xaml;
@@ -10,7 +10,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Platform.UWP;
 
 [assembly: ExportRenderer(typeof(ExtendedEntry), typeof(ExtendedEntryRenderer))]
-namespace SmartHotel.Clients.UWP.Renderers
+namespace Modio.Xamarin.UI.Clients.UWP.Renderers
 {
     public class ExtendedEntryRenderer : EntryRenderer
     {

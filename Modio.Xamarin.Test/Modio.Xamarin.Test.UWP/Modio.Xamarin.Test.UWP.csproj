@@ -125,13 +125,17 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform" Version="6.0.6" />
-    <PackageReference Include="Xamarin.Forms" Version="2.5.0.122203" />
+    <PackageReference Include="Xamarin.Forms" Version="3.0.0.446417" />
     <PackageReference Include="Prism.Unity.Forms" Version="7.0.0.396" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\Modio.Core\Modio.Core\Modio.Core.csproj">
       <Project>{09e417a5-7965-4d7b-9f73-1d0b30863667}</Project>
       <Name>Modio.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Modio.Xamarin.UI.UWP\Modio.Xamarin.UI.UWP.csproj">
+      <Project>{558d2f18-b155-4422-84a2-2ec77cd610a6}</Project>
+      <Name>Modio.Xamarin.UI.UWP</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Modio.Xamarin\Modio.Xamarin\Modio.Xamarin.csproj">
       <Project>{c0186adf-e5e4-4a9e-97e4-cfdb9f4d31e8}</Project>

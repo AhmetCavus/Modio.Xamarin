@@ -1,18 +1,13 @@
-﻿using Modio.Core.Board;
-using Modio.Core.Module;
-using Modio.Xamarin.Board;
+﻿using Modio.Core.Module;
 using Modio.Xamarin.ViewModels;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.CompilerServices;
-using System.Text;
 
 using Xamarin.Forms;
 
 namespace Modio.Xamarin.Views
 {
-	public class BoardPage : ContentPage
+    public class BoardPage : ContentPage
 	{
 
         Grid _contentRoot;
@@ -32,7 +27,8 @@ namespace Modio.Xamarin.Views
 		{
             _contentRoot = new Grid
             {
-                BackgroundColor = Color.BlanchedAlmond
+                BackgroundColor = Color.FloralWhite,
+                Padding = 7
             };
             Content = _contentRoot;
 		}

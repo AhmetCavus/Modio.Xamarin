@@ -2,7 +2,7 @@
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Media;
 
-namespace SmartHotel.Clients.UWP.Extensions
+namespace Modio.Xamarin.UI.Clients.UWP.Extensions
 {
     public static class DependencyObjectExtensions
     {

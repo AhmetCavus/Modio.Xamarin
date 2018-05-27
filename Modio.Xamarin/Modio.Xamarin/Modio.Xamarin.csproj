@@ -6,12 +6,13 @@
 
   <ItemGroup>
     <PackageReference Include="Xam.Plugins.Forms.ImageCircle" Version="2.0.2" />
-    <PackageReference Include="Xamarin.Forms" Version="2.5.0.122203" />
+    <PackageReference Include="Xamarin.Forms" Version="3.0.0.446417" />
     <PackageReference Include="Prism.Unity.Forms" Version="7.0.0.396" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\Modio.Core\Modio.Core\Modio.Core.csproj" />
+    <ProjectReference Include="..\..\Modio.Xamarin.UI\Modio.Xamarin.UI.csproj" />
   </ItemGroup>
 
   <ItemGroup>

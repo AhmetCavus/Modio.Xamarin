@@ -1,5 +1,4 @@
-﻿using Modio.Xamarin.UI;
-using Modio.Xamarin.UI.Services.Navigation;
+﻿using Modio.Xamarin.UI.Services.Navigation;
 using Modio.Xamarin.UI.ViewModels;
 using Modio.Xamarin.UI.ViewModels.Base;
 using System.Threading.Tasks;
@@ -7,7 +6,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
-namespace SmartHotel.Clients
+namespace Modio.Xamarin.UI.Clients
 {
     public partial class App : Application
     {

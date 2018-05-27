@@ -4,7 +4,7 @@
              xmlns:converters="clr-namespace:Modio.Xamarin.UI.Converters;assembly=Modio.Xamarin.UI"
              xmlns:ctrls="clr-namespace:Modio.Xamarin.UI.Controls;assembly=Modio.Xamarin.UI"
              xmlns:effects="clr-namespace:Modio.Xamarin.UI.Effects;assembly=Modio.Xamarin.UI"
-             x:Class="SmartHotel.Clients.App">
+             x:Class="Modio.Xamarin.UI.Clients.App">
 	<Application.Resources>
         <ResourceDictionary>
 

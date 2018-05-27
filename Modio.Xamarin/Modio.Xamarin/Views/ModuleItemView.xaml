@@ -2,11 +2,13 @@
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Modio.Xamarin.Views.ModuleItemView"
+             xmlns:ui="clr-namespace:Modio.Xamarin.UI.Controls;assembly=Modio.Xamarin.UI"
              xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions">
 
-    <Frame IsClippedToBounds="True"
-         HasShadow="True"
-         BackgroundColor="White">
+    <ui:ButtonFrame 
+        IsClippedToBounds="True"
+        HasShadow="True"
+        BackgroundColor="White">
         <Frame.OutlineColor>
             <OnPlatform x:TypeArguments="Color"
                   Android="Gray"
@@ -21,30 +23,34 @@
                   Android="5" iOS="5"/>
         </Frame.Padding>
         
-        <StackLayout Orientation="Horizontal">
-            <Grid VerticalOptions="CenterAndExpand"
-            Padding="0"
+        <StackLayout 
+            BackgroundColor="White"
             HorizontalOptions="FillAndExpand"
-            BackgroundColor="Transparent">
+            Orientation="Horizontal">
+            <Grid VerticalOptions="CenterAndExpand">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="4*"/>
+                    <RowDefinition Height="4*"/>
                 </Grid.RowDefinitions>
                 
-                <StackLayout Orientation="Horizontal" VerticalOptions="Start" >
-                    <controls:CircleImage Source="{Binding ModuleImage}" VerticalOptions="Start" HeightRequest="30" WidthRequest="30"></controls:CircleImage>
+                <StackLayout
+                    BackgroundColor="DarkGray"
+                    HorizontalOptions="FillAndExpand"
+                    Orientation="Horizontal"
+                    VerticalOptions="Start"
+                    Padding="11">
+                    <controls:CircleImage Source="{Binding ModuleImage}" VerticalOptions="Start"></controls:CircleImage>
                     <Label FontAttributes="None"
                        Grid.Row="0"
                        HorizontalTextAlignment="Start"
                        VerticalTextAlignment="Center"
-                       FontSize="12"
-                       Text="{Binding HeadTitle , Mode = TwoWay}" TextColor="Gray" >
+                       FontSize="Large"
+                       Text="{Binding HeadTitle , Mode = TwoWay}" TextColor="White" >
                     </Label>
                 </StackLayout>
                 
-                <Grid Grid.Row="1">
+                <Grid Grid.Row="1" Padding="11">
                     <StackLayout Orientation="Horizontal">
                         <Label FontAttributes="None"
                            Grid.Row="1"
@@ -57,9 +63,7 @@
                     </StackLayout>
                 </Grid>
 
-                <Grid Grid.Row="2"
-                  BackgroundColor="Transparent"
-                  Padding="4">
+                <Grid Grid.Row="2" Padding="11">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto" />
                         <ColumnDefinition />
@@ -73,5 +77,5 @@
             </Grid>
         </StackLayout>
         
-    </Frame>
+    </ui:ButtonFrame>
 </ContentView>
