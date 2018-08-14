@@ -1,5 +1,4 @@
-﻿using Modio.Xamarin.UI.Views;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 
 namespace Modio.Xamarin.UI.Utils
 {
@@ -22,8 +21,8 @@ namespace Modio.Xamarin.UI.Utils
             view.SetValue(TextColorProperty, value);
 
             var page = view as Page;
-            var parent = page?.Parent as CustomNavigationPage;
-            parent?.ApplyNavigationTextColor(page);
+            var parent = page?.Parent;
+            //parent?.ApplyNavigationTextColor(page);
         }
     }
 }

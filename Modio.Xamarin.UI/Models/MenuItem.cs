@@ -1,5 +1,4 @@
-﻿using Modio.Xamarin.UI.ViewModels.Base;
-using System;
+﻿using System;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 

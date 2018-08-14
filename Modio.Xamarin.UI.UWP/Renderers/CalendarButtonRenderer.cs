@@ -1,5 +1,5 @@
-﻿using SmartHotel.Clients.Core.Controls;
-using SmartHotel.Clients.UWP.Renderers;
+﻿using Modio.Xamarin.UI.Controls;
+using Modio.Xamarin.UI.UWP.Renderers;
 using System;
 using System.Threading.Tasks;
 using Windows.UI.Xaml;
@@ -8,11 +8,11 @@ using Windows.UI.Xaml.Media;
 using Xamarin.Forms.Platform.UWP;
 
 [assembly: ExportRenderer(typeof(CalendarButton), typeof(CalendarButtonRenderer))]
-namespace SmartHotel.Clients.UWP.Renderers
+namespace Modio.Xamarin.UI.UWP.Renderers
 {
     public class CalendarButtonRenderer : ButtonRenderer
     {
-        protected override async void OnElementChanged(ElementChangedEventArgs<Xamarin.Forms.Button> e)
+        protected override async void OnElementChanged(ElementChangedEventArgs<global::Xamarin.Forms.Button> e)
         {
             base.OnElementChanged(e);
             if (Control == null) return;
@@ -117,18 +117,18 @@ namespace SmartHotel.Clients.UWP.Renderers
             return GetImageAsync(sourceButton.BackgroundImage);
         }
 
-        private static IImageSourceHandler GetHandler(Xamarin.Forms.ImageSource source)
+        private static IImageSourceHandler GetHandler(global::Xamarin.Forms.ImageSource source)
         {
             IImageSourceHandler returnValue = null;
-            if (source is Xamarin.Forms.UriImageSource)
+            if (source is global::Xamarin.Forms.UriImageSource)
             {
                 returnValue = new UriImageSourceHandler();
             }
-            else if (source is Xamarin.Forms.FileImageSource)
+            else if (source is global::Xamarin.Forms.FileImageSource)
             {
                 returnValue = new FileImageSourceHandler();
             }
-            else if (source is Xamarin.Forms.StreamImageSource)
+            else if (source is global::Xamarin.Forms.StreamImageSource)
             {
                 returnValue = new StreamImageSourceHandler();
             }
@@ -141,7 +141,7 @@ namespace SmartHotel.Clients.UWP.Renderers
         /// <param name="source">The <see cref="ImageSource" /> to load the image from.</param>
         /// <param name="currentImage">The current image.</param>
         /// <returns>A properly sized image.</returns>
-        private static async Task<Image> GetImageAsync(Xamarin.Forms.ImageSource source)
+        private static async Task<Image> GetImageAsync(global::Xamarin.Forms.ImageSource source)
         {
             var image = new Image();
             var handler = GetHandler(source);

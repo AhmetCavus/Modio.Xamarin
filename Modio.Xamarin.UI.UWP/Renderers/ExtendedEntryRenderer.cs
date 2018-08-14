@@ -1,6 +1,7 @@
-﻿using SmartHotel.Clients.Core.Controls;
+﻿using Modio.Xamarin.UI.Controls;
+using Modio.Xamarin.UI.UWP.Extensions;
+using Modio.Xamarin.UI.UWP.Renderers;
 using SmartHotel.Clients.UWP.Extensions;
-using SmartHotel.Clients.UWP.Renderers;
 using System.ComponentModel;
 using System.Linq;
 using Windows.UI.Xaml;
@@ -10,7 +11,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Platform.UWP;
 
 [assembly: ExportRenderer(typeof(ExtendedEntry), typeof(ExtendedEntryRenderer))]
-namespace SmartHotel.Clients.UWP.Renderers
+namespace Modio.Xamarin.UI.UWP.Renderers
 {
     public class ExtendedEntryRenderer : EntryRenderer
     {
@@ -24,7 +25,7 @@ namespace SmartHotel.Clients.UWP.Renderers
             {
                 if (Control != null)
                 {
-                    Control.Style = App.Current.Resources["FormTextBoxStyle"] as Windows.UI.Xaml.Style;
+                    Control.Style = global::Xamarin.Forms.Application.Current.Resources["FormTextBoxStyle"] as Windows.UI.Xaml.Style;
                 }
 
                 Control.Loaded -= OnControlLoaded;

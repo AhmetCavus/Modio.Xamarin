@@ -13,7 +13,6 @@ namespace Modio.Xamarin.UI.Extensions
             {
                 collection.Add(item);
             }
-
             return collection;
         }
     }

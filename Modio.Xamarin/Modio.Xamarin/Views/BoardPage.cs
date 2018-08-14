@@ -1,19 +1,14 @@
-﻿using Modio.Core.Board;
-using Modio.Core.Module;
-using Modio.Xamarin.Board;
+﻿using Modio.Core.Module;
 using Modio.Xamarin.ViewModels;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.CompilerServices;
-using System.Text;
 
 using Xamarin.Forms;
 
 namespace Modio.Xamarin.Views
 {
-	public class BoardPage : ContentPage
-	{
+    public abstract class BoardPage : ContentPage
+    {
 
         Grid _contentRoot;
         ViewModelBoard _vm;
@@ -67,14 +62,15 @@ namespace Modio.Xamarin.Views
             const int MaxColumn = 2;
             foreach (var module in modules)
             {
-                _contentRoot.Children.Add(new ModuleItemView
-                {
-                    BindingContext = module.MetaInfo,
-                }, cIndex % MaxColumn, rIndex);
+                var content = OnCreateModuleView();
+                content.BindingContext = module.MetaInfo;
+                _contentRoot.Children.Add(content, cIndex % MaxColumn, rIndex);
                 cIndex += 1;
                 rIndex = cIndex / MaxColumn;
             }
         }
+
+        protected abstract TemplatedView OnCreateModuleView();
 
     }
 }

@@ -2,7 +2,6 @@
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Serialization;
 using System;
-using System.ComponentModel.DataAnnotations;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -99,7 +98,7 @@ namespace Modio.Xamarin.UI.Services.Request
 
         private bool IsEmail(string email)
         {
-            return new EmailAddressAttribute().IsValid(email);
+            return true;
         }
 
         private async Task HandleResponse(HttpResponseMessage response)

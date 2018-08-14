@@ -1,6 +1,5 @@
 ﻿using Modio.Core.App;
 using Modio.Core.Board;
-using Modio.Core.Container;
 using Modio.Core.Module;
 using Modio.Xamarin.Container;
 using Prism;

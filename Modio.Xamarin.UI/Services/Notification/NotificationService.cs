@@ -18,7 +18,7 @@ namespace Modio.Xamarin.UI.Services.Notification
 
         public Task<IEnumerable<Models.Notification>> GetNotificationsAsync(int seq, string token)
         {
-            UriBuilder builder = new UriBuilder(AppSettings.NotificationsEndpoint);
+            UriBuilder builder = new UriBuilder("");
             builder.AppendToPath("notifications");
             builder.Query = $"seq={seq.ToString(CultureInfo.InvariantCulture)}";
 

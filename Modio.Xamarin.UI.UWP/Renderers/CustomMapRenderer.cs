@@ -1,7 +1,7 @@
-﻿using SmartHotel.Clients.Core.Controls;
-using SmartHotel.Clients.Core.Helpers;
-using SmartHotel.Clients.Core.Models;
-using SmartHotel.Clients.UWP.Renderers;
+﻿using Modio.Xamarin.UI.Controls;
+using Modio.Xamarin.UI.Helpers;
+using Modio.Xamarin.UI.Models;
+using Modio.Xamarin.UI.UWP.Renderers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,7 +14,7 @@ using Xamarin.Forms.Maps.UWP;
 using Xamarin.Forms.Platform.UWP;
 
 [assembly: ExportRenderer(typeof(CustomMap), typeof(CustomMapRenderer))]
-namespace SmartHotel.Clients.UWP.Renderers
+namespace Modio.Xamarin.UI.UWP.Renderers
 {
     public class CustomMapRenderer : MapRenderer
     {

@@ -19,7 +19,7 @@ namespace Modio.Xamarin.UI.Services.Suggestion
 
         public async Task<ObservableCollection<Models.Suggestion>> GetSuggestionsAsync(double latitude, double longitude)
         {
-            UriBuilder builder = new UriBuilder(AppSettings.SuggestionsEndpoint);
+            UriBuilder builder = new UriBuilder("");
             builder.AppendToPath("suggestions");
             builder.Query = $"latitude={latitude.ToString(CultureInfo.InvariantCulture)}&longitude={longitude.ToString(CultureInfo.InvariantCulture)}";
 

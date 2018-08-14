@@ -1,5 +1,5 @@
-﻿using SmartHotel.Clients.Core.Controls;
-using SmartHotel.Clients.UWP.Renderers;
+﻿using Modio.Xamarin.UI.Controls;
+using Modio.Xamarin.UI.UWP.Renderers;
 using System.Numerics;
 using Windows.UI;
 using Windows.UI.Composition;
@@ -8,14 +8,14 @@ using Windows.UI.Xaml.Hosting;
 using Xamarin.Forms.Platform.UWP;
 
 [assembly: ExportRenderer(typeof(ButtonFrame), typeof(ButtonFrameRenderer))]
-namespace SmartHotel.Clients.UWP.Renderers
+namespace Modio.Xamarin.UI.UWP.Renderers
 {
     public class ButtonFrameRenderer : FrameRenderer
     {
         private const int ShadowWidth = 1;
         private SpriteVisual _spriteVisual;
 
-        protected override void OnElementChanged(ElementChangedEventArgs<Xamarin.Forms.Frame> e)
+        protected override void OnElementChanged(ElementChangedEventArgs<global::Xamarin.Forms.Frame> e)
         {
             if (e.NewElement != null)
             {

@@ -1,7 +1,4 @@
-﻿using Modio.Xamarin.UI.Models;
-using System;
-using System.Diagnostics;
-using Xamarin.Forms.Maps;
+﻿using System;
 
 namespace Modio.Xamarin.UI.Helpers
 {
@@ -25,26 +22,26 @@ namespace Modio.Xamarin.UI.Helpers
             return (dist);
         }
 
-        internal static void CenterMapInDefaultLocation(Map map)
-        {
-            try
-            {
-                var location = GeoLocation.Parse(AppSettings.FallbackMapsLocation);
-                var initialPosition = new Position(
-                      location.Latitude,
-                      location.Longitude);
+        //internal static void CenterMapInDefaultLocation(Map map)
+        //{
+        //    try
+        //    {
+        //        var location = GeoLocation.Parse("");
+        //        var initialPosition = new Position(
+        //              location.Latitude,
+        //              location.Longitude);
 
-                var mapSpan = MapSpan.FromCenterAndRadius(
-                    initialPosition,
-                    Distance.FromMiles(1.0));
+        //        var mapSpan = MapSpan.FromCenterAndRadius(
+        //            initialPosition,
+        //            Distance.FromMiles(1.0));
 
-                map.MoveToRegion(mapSpan);
-            }
-            catch(Exception ex)
-            {
-                Debug.WriteLine($"[MapHelper] Error: {ex}");
-            }
-        }
+        //        map.MoveToRegion(mapSpan);
+        //    }
+        //    catch(Exception ex)
+        //    {
+        //        Debug.WriteLine($"[MapHelper] Error: {ex}");
+        //    }
+        //}
 
         private static double Deg2Rad(double deg)
         {

@@ -1,4 +1,5 @@
 ﻿using Modio.Xamarin.Views;
+using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace Modio.Xamarin.Test.Views
@@ -10,5 +11,10 @@ namespace Modio.Xamarin.Test.Views
 		{
 			InitializeComponent ();
 		}
-	}
+
+        protected override TemplatedView OnCreateModuleView()
+        {
+            return new ModuleButton();
+        }
+    }
 }
